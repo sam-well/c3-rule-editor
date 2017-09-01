@@ -101,6 +101,62 @@ module C3DataEditor
       titles.count.times do |i|
         table.getColumn(i).pack
       end
+
+      make_table_editable(table, shell)
+    end
+
+    private_class_method def self.make_table_editable(table, shell)
+      editor = Swt::Custom::TableEditor.new(table)
+      editor.horizontalAlignment = Swt::SWT::LEFT
+      editor.grabHorizontal = true
+      handle_table_event = ->(event) do
+        client_area = table.get_client_area
+        pt = Swt::Graphics::Point.new(event.x, event.y)
+        index = table.get_top_index
+        while index < table.get_item_count
+          visible = false
+          item = table.get_item(index)
+          table.get_column_count.times do |i|
+            rect = item.get_bounds(i)
+            if rect.contains(pt)
+              column = i
+              text = Swt::Widgets::Text.new(table, Swt::SWT::NONE)
+              handle_text_event = ->(e) do
+                case e.type # .class?
+                when Swt::SWT::FocusOut
+                  item.set_text(column, text.get_text)
+                  text.dispose
+                  break
+                when Swt::SWT::Traverse
+                  case e.detail
+                  when Swt::SWT::TRAVERSE_RETURN
+                    item.set_text(column, text.get_text)
+                  # Fall through
+                  when Swt::SWT::TRAVERSE_ESCAPE
+                    text.dispose
+                    e.doit = false
+                  end
+                  # break
+                end
+              end
+              text.add_listener(Swt::SWT::FocusOut, handle_text_event)
+              text.add_listener(Swt::SWT::Traverse, handle_text_event)
+              editor.set_editor(text, item, i)
+              text.set_text(item.get_text(i))
+              text.select_all
+              text.set_focus
+            end
+            if (!visible && rect.intersects(client_area))
+              visible = true
+            end
+          end
+          if !visible
+            return
+          end
+          index += 1
+        end
+      end
+      table.add_listener(Swt::SWT::MouseDown, handle_table_event)
     end
 
     private_class_method def self.build_housing_table(shell)
@@ -156,6 +212,8 @@ module C3DataEditor
       titles.count.times do |i|
         table.getColumn(i).pack
       end
+
+      make_table_editable(table, shell)
     end
   end
 end
