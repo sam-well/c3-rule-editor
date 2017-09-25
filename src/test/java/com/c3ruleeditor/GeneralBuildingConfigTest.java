@@ -1,27 +1,27 @@
 package com.c3ruleeditor;
 
 import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 
 import com.c3ruleeditor.GeneralBuildingConfig;
 
 public class GeneralBuildingConfigTest {
+  public GeneralBuildingConfig testConfig;
 
-  // @BeforeEach
+  @BeforeEach
+  public void init() {
+    testConfig = new GeneralBuildingConfig();
+  }
 
   @Nested
   public class GetBuildingCost {
     @Test
     public void assertItReturnsTheCorrectValue() {
-      int expected = 5;
-      GeneralBuildingConfig config = new GeneralBuildingConfig(
-          expected, null, null, null, null, null, null, null
-      );
-      int actual = config.getBuildingCost();
-      assertEquals(actual, expected);
+      testConfig.buildingCost = 1;
+      assertEquals((int) testConfig.buildingCost, 1);
     }
   }
 
@@ -29,12 +29,8 @@ public class GeneralBuildingConfigTest {
   public class GetInitialDesirability {
     @Test
     public void assertItReturnsTheCorrectValue() {
-      int expected = 5;
-      GeneralBuildingConfig config = new GeneralBuildingConfig(
-          null, expected, null, null, null, null, null, null
-      );
-      int actual = config.getInitialDesirability();
-      assertEquals(actual, expected);
+      testConfig.initialDesirability = 2;
+      assertEquals((int) testConfig.initialDesirability, 2);
     }
   }
 
@@ -42,12 +38,8 @@ public class GeneralBuildingConfigTest {
   public class GetDesirabilityStep {
     @Test
     public void assertItReturnsTheCorrectValue() {
-      int expected = 5;
-      GeneralBuildingConfig config = new GeneralBuildingConfig(
-          null, null, expected, null, null, null, null, null
-      );
-      int actual = config.getDesirabilityStep();
-      assertEquals(actual, expected);
+      testConfig.desirabilityStep = 3;
+      assertEquals((int) testConfig.desirabilityStep, 3);
     }
   }
 
@@ -55,12 +47,8 @@ public class GeneralBuildingConfigTest {
   public class GetDesirabilityStepSize {
     @Test
     public void assertItReturnsTheCorrectValue() {
-      int expected = 5;
-      GeneralBuildingConfig config = new GeneralBuildingConfig(
-          null, null, null, expected, null, null, null, null
-      );
-      int actual = config.getDesirabilityStepSize();
-      assertEquals(actual, expected);
+      testConfig.desirabilityStepSize = 4;
+      assertEquals((int) testConfig.desirabilityStepSize, 4);
     }
   }
 
@@ -68,12 +56,8 @@ public class GeneralBuildingConfigTest {
   public class GetMaxDesirabilityRange {
     @Test
     public void assertItReturnsTheCorrectValue() {
-      int expected = 5;
-      GeneralBuildingConfig config = new GeneralBuildingConfig(
-          null, null, null, null, expected, null, null, null
-      );
-      int actual = config.getMaxDesirabilityRange();
-      assertEquals(actual, expected);
+      testConfig.maxDesirabilityRange = 5;
+      assertEquals((int) testConfig.maxDesirabilityRange, 5);
     }
   }
 
@@ -81,12 +65,8 @@ public class GeneralBuildingConfigTest {
   public class GetEmployeesNeeded {
     @Test
     public void assertItReturnsTheCorrectValue() {
-      int expected = 5;
-      GeneralBuildingConfig config = new GeneralBuildingConfig(
-          null, null, null, null, null, expected, null, null
-      );
-      int actual = config.getEmployeesNeeded();
-      assertEquals(actual, expected);
+      testConfig.employeesNeeded = 6;
+      assertEquals((int) testConfig.employeesNeeded, 6);
     }
   }
 
@@ -94,12 +74,8 @@ public class GeneralBuildingConfigTest {
   public class GetUndetermined1 {
     @Test
     public void assertItReturnsTheCorrectValue() {
-      int expected = 5;
-      GeneralBuildingConfig config = new GeneralBuildingConfig(
-          null, null, null, null, null, null, expected, null
-      );
-      int actual = config.getUndetermined1();
-      assertEquals(actual, expected);
+      testConfig.undetermined1 = 7;
+      assertEquals((int) testConfig.undetermined1, 7);
     }
   }
 
@@ -107,13 +83,14 @@ public class GeneralBuildingConfigTest {
   public class GetUndetermined2 {
     @Test
     public void assertItReturnsTheCorrectValue() {
-      int expected = 5;
-      GeneralBuildingConfig config = new GeneralBuildingConfig(
-          null, null, null, null, null, null, null, expected
-      );
-      int actual = config.getUndetermined2();
-      assertEquals(actual, expected);
+      testConfig.undetermined1 = 8;
+      assertEquals((int) testConfig.undetermined1, 8);
     }
+  }
+
+  @AfterEach
+  public void tearDown() {
+    testConfig = null;
   }
 
 }
