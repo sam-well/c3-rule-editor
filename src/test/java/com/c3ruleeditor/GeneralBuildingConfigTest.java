@@ -21,7 +21,7 @@ public class GeneralBuildingConfigTest {
     @Test
     public void assertItReturnsTheCorrectValue() {
       testConfig.buildingCost = 1;
-      assertEquals((int) testConfig.buildingCost, 1);
+      assertEquals(testConfig.buildingCost, (Integer) 1);
     }
   }
 
@@ -30,7 +30,7 @@ public class GeneralBuildingConfigTest {
     @Test
     public void assertItReturnsTheCorrectValue() {
       testConfig.initialDesirability = 2;
-      assertEquals((int) testConfig.initialDesirability, 2);
+      assertEquals(testConfig.initialDesirability, (Integer) 2);
     }
   }
 
@@ -39,7 +39,7 @@ public class GeneralBuildingConfigTest {
     @Test
     public void assertItReturnsTheCorrectValue() {
       testConfig.desirabilityStep = 3;
-      assertEquals((int) testConfig.desirabilityStep, 3);
+      assertEquals(testConfig.desirabilityStep, (Integer) 3);
     }
   }
 
@@ -48,7 +48,7 @@ public class GeneralBuildingConfigTest {
     @Test
     public void assertItReturnsTheCorrectValue() {
       testConfig.desirabilityStepSize = 4;
-      assertEquals((int) testConfig.desirabilityStepSize, 4);
+      assertEquals(testConfig.desirabilityStepSize, (Integer) 4);
     }
   }
 
@@ -57,7 +57,7 @@ public class GeneralBuildingConfigTest {
     @Test
     public void assertItReturnsTheCorrectValue() {
       testConfig.maxDesirabilityRange = 5;
-      assertEquals((int) testConfig.maxDesirabilityRange, 5);
+      assertEquals(testConfig.maxDesirabilityRange, (Integer) 5);
     }
   }
 
@@ -66,7 +66,7 @@ public class GeneralBuildingConfigTest {
     @Test
     public void assertItReturnsTheCorrectValue() {
       testConfig.employeesNeeded = 6;
-      assertEquals((int) testConfig.employeesNeeded, 6);
+      assertEquals(testConfig.employeesNeeded, (Integer) 6);
     }
   }
 
@@ -75,7 +75,7 @@ public class GeneralBuildingConfigTest {
     @Test
     public void assertItReturnsTheCorrectValue() {
       testConfig.undetermined1 = 7;
-      assertEquals((int) testConfig.undetermined1, 7);
+      assertEquals(testConfig.undetermined1, (Integer) 7);
     }
   }
 
@@ -84,7 +84,7 @@ public class GeneralBuildingConfigTest {
     @Test
     public void assertItReturnsTheCorrectValue() {
       testConfig.undetermined1 = 8;
-      assertEquals((int) testConfig.undetermined1, 8);
+      assertEquals(testConfig.undetermined1, (Integer) 8);
     }
   }
 
