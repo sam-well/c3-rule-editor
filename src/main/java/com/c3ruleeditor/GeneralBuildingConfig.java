@@ -1,6 +1,6 @@
 package com.c3ruleeditor;
 
-public class GeneralBuildingConfig {
+public final class GeneralBuildingConfig {
   public Integer buildingCost;
   public Integer initialDesirability;
   public Integer desirabilityStep;
