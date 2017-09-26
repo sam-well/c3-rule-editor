@@ -1,3 +1,4 @@
+com/c3ruleeditor/GeneralBuildingTest$GettersAndSetters.class
 com/c3ruleeditor/GeneralBuildingConfigTest$GetMaxDesirabilityRange.class
 com/c3ruleeditor/GeneralBuildingConfigTest$GetInitialDesirability.class
 com/c3ruleeditor/GeneralBuildingConfigTest.class
@@ -5,5 +6,7 @@ com/c3ruleeditor/GeneralBuildingConfigTest$GetBuildingCost.class
 com/c3ruleeditor/GeneralBuildingConfigTest$GetEmployeesNeeded.class
 com/c3ruleeditor/GeneralBuildingConfigTest$GetDesirabilityStepSize.class
 com/c3ruleeditor/GeneralBuildingConfigTest$GetUndetermined2.class
+com/c3ruleeditor/GeneralBuildingTest.class
+com/c3ruleeditor/GeneralBuildingTest$Equals.class
 com/c3ruleeditor/GeneralBuildingConfigTest$GetUndetermined1.class
 com/c3ruleeditor/GeneralBuildingConfigTest$GetDesirabilityStep.class
