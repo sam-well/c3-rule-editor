@@ -1,7 +1,5 @@
 package com.c3ruleeditor;
 
-import com.c3ruleeditor.GeneralBuildingConfig;
-
 public final class GeneralBuilding {
   public Integer buildingId;
   public String buildingName;
@@ -18,8 +16,7 @@ public final class GeneralBuilding {
       Integer buildingId, String buildingName, Integer buildingCost,
       Integer initialDesirability, Integer desirabilityStep,
       Integer desirabilityStepSize, Integer maxDesirabilityRange,
-      Integer employeesNeeded, Integer undetermined1, Integer undetermined2 
-    ) {
+      Integer employeesNeeded, Integer undetermined1, Integer undetermined2) {
     this.buildingId = buildingId;
     this.buildingName = buildingName;
     this.buildingCost = buildingCost;
@@ -52,16 +49,16 @@ public final class GeneralBuilding {
       return false;
     } else if (obj instanceof GeneralBuilding) {
       GeneralBuilding other = (GeneralBuilding) obj;
-      boolean truthiness = other.buildingId.equals(this.buildingId) &&
-          other.buildingName.equals(this.buildingName) &&
-          other.buildingCost.equals(this.buildingCost) &&
-          other.initialDesirability.equals(this.initialDesirability) &&
-          other.desirabilityStep.equals(this.desirabilityStep) &&
-          other.desirabilityStepSize.equals(this.desirabilityStepSize) &&
-          other.maxDesirabilityRange.equals(this.maxDesirabilityRange) &&
-          other.employeesNeeded.equals(this.employeesNeeded) &&
-          other.undetermined1.equals(this.undetermined1) &&
-          other.undetermined2.equals(this.undetermined2);
+      boolean truthiness = other.buildingId.equals(this.buildingId)
+          && other.buildingName.equals(this.buildingName)
+          && other.buildingCost.equals(this.buildingCost)
+          && other.initialDesirability.equals(this.initialDesirability)
+          && other.desirabilityStep.equals(this.desirabilityStep)
+          && other.desirabilityStepSize.equals(this.desirabilityStepSize)
+          && other.maxDesirabilityRange.equals(this.maxDesirabilityRange)
+          && other.employeesNeeded.equals(this.employeesNeeded)
+          && other.undetermined1.equals(this.undetermined1)
+          && other.undetermined2.equals(this.undetermined2);
       return truthiness;
     } else {
       return false;

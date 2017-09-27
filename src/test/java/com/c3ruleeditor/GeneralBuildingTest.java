@@ -1,13 +1,13 @@
 package com.c3ruleeditor;
 
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-
 import com.c3ruleeditor.GeneralBuilding;
-import com.c3ruleeditor.GeneralBuildingConfig;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
 
 public class GeneralBuildingTest {
   private GeneralBuilding testBuilding;
@@ -85,9 +85,9 @@ public class GeneralBuildingTest {
     @Test
     public void returnsCorrectBoolean() {
       testBuilding = new GeneralBuilding(
-          1, "two", 3, 4, 5, 6, 7, 8, 9, 10 );
+          1, "two", 3, 4, 5, 6, 7, 8, 9, 10);
       GeneralBuilding actual = new GeneralBuilding(
-          1, "two", 3, 4, 5, 6, 7, 8, 9, 10 );
+          1, "two", 3, 4, 5, 6, 7, 8, 9, 10);
       assertTrue(testBuilding.equals(actual));
     }
   }
